@@ -1214,6 +1214,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1894097484}
+    - target: {fileID: 854609031961245722, guid: 79246eeeae53a5344935010074424474,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5121085458351353116, guid: 79246eeeae53a5344935010074424474,
         type: 3}
       propertyPath: m_LocalPosition.x
