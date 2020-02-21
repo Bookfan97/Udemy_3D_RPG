@@ -185,6 +185,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5354415488359532434, guid: 870f6beead0b8a54faabc76a65d15a19,
         type: 3}
+    - target: {fileID: 854609031961245722, guid: 79246eeeae53a5344935010074424474,
+        type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: a1112e839a5319a449c077757511a388,
+        type: 2}
+    - target: {fileID: 854609031961245722, guid: 79246eeeae53a5344935010074424474,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 56e7ffdbbcf0ccf4f9495c3d8230e039,
+        type: 2}
     - target: {fileID: 3823058289818505996, guid: 79246eeeae53a5344935010074424474,
         type: 3}
       propertyPath: uniqueIdentifier
