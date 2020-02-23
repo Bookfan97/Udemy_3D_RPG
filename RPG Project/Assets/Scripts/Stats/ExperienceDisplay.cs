@@ -16,6 +16,6 @@ public class ExperienceDisplay : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<Text>().text = String.Format("{0:0}%", experience.GetPoints());
+        GetComponent<Text>().text = String.Format("{0:0} XP", experience.GetPoints());
     }
 }
