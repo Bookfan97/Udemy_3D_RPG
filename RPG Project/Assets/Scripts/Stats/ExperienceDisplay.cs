@@ -1,4 +1,4 @@
-﻿using RPG.Resources;
+﻿using RPG.Stats;
 using System;
 using System.Collections;
 using System.Collections.Generic;
