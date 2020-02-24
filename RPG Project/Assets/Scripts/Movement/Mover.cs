@@ -20,10 +20,6 @@ namespace RPG.Movement
             health = GetComponent<Health>();
         }
 
-        private void Start()
-        {
-        }
-
         void Update()
         {
             navMeshAgent.enabled = !health.IsDead();
@@ -54,7 +50,7 @@ namespace RPG.Movement
             Vector3 velocity = navMeshAgent.velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
-            GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+            GetComponent<Animator>().SetFloat("ForwardSpeed", speed);
         }
 
         public object CaptureState()
