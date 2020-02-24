@@ -12,54 +12,72 @@ namespace RPG.Stats
         [SerializeField] CharacterClass characterClass;
         [SerializeField] Progression progression = null;
         [SerializeField] GameObject levelUpParticleEffect = null;
+
         public event Action onLevelUp;
+
         int currentLevel = 0;
+
         private void Start()
         {
-            currentLevel = GetLevel();
+            currentLevel = CalculateLevel();
             Experience experience = GetComponent<Experience>();
-            if(experience != null)
+            if (experience != null)
             {
                 experience.onExperienceGained += UpdateLevel;
             }
         }
+
         private void UpdateLevel()
         {
-            int newLevel = GetLevel();
-            if(newLevel >currentLevel)
+            int newLevel = CalculateLevel();
+            if (newLevel > currentLevel)
             {
                 currentLevel = newLevel;
                 LevelUpEffect();
                 onLevelUp();
-                print("LevelUp");
             }
         }
 
         private void LevelUpEffect()
         {
-            Instantiate(levelUpParticleEffect,transform);
+            Instantiate(levelUpParticleEffect, transform);
         }
 
         public float GetStat(Stat stat)
         {
-            return progression.GetStat(stat, characterClass,startingLevel);
+            return progression.GetStat(stat, characterClass, GetLevel()) + GetAdditiveModifier(stat);
         }
+
         public int GetLevel()
         {
-            if(currentLevel <1)
+            if (currentLevel < 1)
             {
                 currentLevel = CalculateLevel();
             }
             return currentLevel;
         }
-        public int CalculateLevel()
-        {
 
+        private float GetAdditiveModifier(Stat stat)
+        {
+            float total = 0;
+            foreach (IModifierProvider provider in GetComponents<IModifierProvider>())
+            {
+                foreach (float modifier in provider.GetAdditiveModifier(stat))
+                {
+                    total += modifier;
+                }
+            }
+            return total;
+        }
+
+        private int CalculateLevel()
+        {
             Experience experience = GetComponent<Experience>();
             if (experience == null) return startingLevel;
+
             float currentXP = experience.GetPoints();
             int penultimateLevel = progression.GetLevels(Stat.ExperienceToLevelUp, characterClass);
-            for (int level = 1; level < penultimateLevel; level++)
+            for (int level = 1; level <= penultimateLevel; level++)
             {
                 float XPToLevelUp = progression.GetStat(Stat.ExperienceToLevelUp, characterClass, level);
                 if (XPToLevelUp > currentXP)
@@ -67,6 +85,7 @@ namespace RPG.Stats
                     return level;
                 }
             }
+
             return penultimateLevel + 1;
         }
     }
