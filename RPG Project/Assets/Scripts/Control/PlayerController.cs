@@ -1,19 +1,19 @@
-﻿using System;
-using RPG.Combat;
-using RPG.Core;
+﻿using RPG.Combat;
 using RPG.Movement;
-using RPG.Resources;
 using UnityEngine;
+using RPG.Resources;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
         Health health;
-        private void Start()
+
+        private void Awake()
         {
             health = GetComponent<Health>();
         }
+
         private void Update()
         {
             if (health.IsDead()) return;
@@ -21,6 +21,7 @@ namespace RPG.Control
             if (InteractWithCombat()) return;
             if (InteractWithMovement()) return;
         }
+
         private bool InteractWithCombat()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
@@ -42,6 +43,7 @@ namespace RPG.Control
             }
             return false;
         }
+
         private bool InteractWithMovement()
         {
             RaycastHit hit;
@@ -56,6 +58,7 @@ namespace RPG.Control
             }
             return false;
         }
+
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
