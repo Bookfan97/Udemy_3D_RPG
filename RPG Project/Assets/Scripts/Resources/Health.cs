@@ -4,12 +4,14 @@ using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RPG.Resources
 {
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] float regenerationPercentage = 70;
+        [SerializeField] UnityEvent takeDamage;
 
         LazyValue<float> healthPoints;
 
@@ -54,6 +56,10 @@ namespace RPG.Resources
             {
                 Die();
                 AwardExperience(instigator);
+            }
+            else
+            {
+                takeDamage.Invoke();
             }
         }
 
