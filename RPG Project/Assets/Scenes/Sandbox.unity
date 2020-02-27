@@ -134,6 +134,11 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 717680704826036448, guid: 45a7c203002fa4b40ab28a187115307a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1471190618940598348, guid: 45a7c203002fa4b40ab28a187115307a,
         type: 3}
       propertyPath: m_Name
@@ -353,6 +358,11 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 287661776}
+    - target: {fileID: 717680704826036448, guid: 45a7c203002fa4b40ab28a187115307a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1471190618940598348, guid: 45a7c203002fa4b40ab28a187115307a,
         type: 3}
       propertyPath: m_Name
@@ -520,7 +530,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118189172}
-  m_LocalRotation: {x: 0.32798982, y: -0.18193293, z: 0.06452794, w: 0.92474824}
+  m_LocalRotation: {x: 0.3279898, y: -0.18193296, z: 0.06452794, w: 0.92474824}
   m_LocalPosition: {x: -11.071442, y: -13.44665, z: -64.534996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1350,6 +1360,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621948158}
     m_Modifications:
+    - target: {fileID: 717680704826036448, guid: 45a7c203002fa4b40ab28a187115307a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1471190618940598348, guid: 45a7c203002fa4b40ab28a187115307a,
         type: 3}
       propertyPath: m_Name
@@ -1479,7 +1494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 436910424}
-  m_PathPosition: 0
+  m_PathPosition: 1
   m_PositionUnits: 2
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -1613,6 +1628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: chaseDistance
       value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 717680704826036448, guid: 45a7c203002fa4b40ab28a187115307a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1471190618940598348, guid: 45a7c203002fa4b40ab28a187115307a,
         type: 3}
@@ -1808,6 +1828,11 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 181625458}
+    - target: {fileID: 717680704826036448, guid: 45a7c203002fa4b40ab28a187115307a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1471190618940598348, guid: 45a7c203002fa4b40ab28a187115307a,
         type: 3}
       propertyPath: m_Name
@@ -2536,7 +2561,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665193035}
-  m_LocalRotation: {x: 0.025846262, y: -0.12339542, z: 0.0032149798, w: 0.9920157}
+  m_LocalRotation: {x: 0.0056812405, y: 0.9655592, z: -0.021158626, w: 0.25925952}
   m_LocalPosition: {x: -29.071442, y: -19.44665, z: -66.534996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2881,6 +2906,11 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 2822369855144366244}
+    - target: {fileID: 717680704826036448, guid: 45a7c203002fa4b40ab28a187115307a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1471190618940598348, guid: 45a7c203002fa4b40ab28a187115307a,
         type: 3}
       propertyPath: m_Name
@@ -3187,6 +3217,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 621948158}
     m_Modifications:
+    - target: {fileID: 717680704826036448, guid: 45a7c203002fa4b40ab28a187115307a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1471190618940598348, guid: 45a7c203002fa4b40ab28a187115307a,
         type: 3}
       propertyPath: m_Name
