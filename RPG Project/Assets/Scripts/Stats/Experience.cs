@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using RPG.Saving;
 using System;
 
@@ -8,27 +6,29 @@ namespace RPG.Stats
 {
     public class Experience : MonoBehaviour, ISaveable
     {
-        [SerializeField] float experincePoints = 0;
-        //public delegate void ExperienceGainedDelegate();
+        [SerializeField] float experiencePoints = 0;
+
         public event Action onExperienceGained;
-        public object CaptureState()
-        {
-            return experincePoints;
-        }
 
         public void GainExperience(float experience)
         {
-            experincePoints += experience;
+            experiencePoints += experience;
+            onExperienceGained();
         }
 
-        internal float GetPoints()
+        public float GetPoints()
         {
-            return experincePoints;
+            return experiencePoints;
+        }
+
+        public object CaptureState()
+        {
+            return experiencePoints;
         }
 
         public void RestoreState(object state)
         {
-            experincePoints = (float)state;
+            experiencePoints = (float)state;
         }
     }
 }

@@ -1,30 +1,34 @@
-﻿using RPG.Movement;
+﻿using RPG.Combat;
+using RPG.Movement;
+using UnityEngine;
 using RPG.Resources;
 using System;
-using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
-        private Health health;
+        Health health;
+
         [System.Serializable]
-        private struct CursorMapping
+        struct CursorMapping
         {
             public CursorType type;
             public Texture2D texture;
             public Vector2 hotspot;
         }
-        [SerializeField] private CursorMapping[] cursorMappings = null;
-        [SerializeField] private float maxNavMeshProjectionDistance = 1f;
+
+        [SerializeField] CursorMapping[] cursorMappings = null;
+        [SerializeField] float maxNavMeshProjectionDistance = 1f;
         [SerializeField] float maxNavPathLength = 40f;
-        
+
         private void Awake()
         {
             health = GetComponent<Health>();
         }
+
         private void Update()
         {
             if (InteractWithUI()) return;
@@ -33,8 +37,10 @@ namespace RPG.Control
                 SetCursor(CursorType.None);
                 return;
             }
+
             if (InteractWithComponent()) return;
             if (InteractWithMovement()) return;
+
             SetCursor(CursorType.None);
         }
 
@@ -47,6 +53,7 @@ namespace RPG.Control
             }
             return false;
         }
+
         private bool InteractWithComponent()
         {
             RaycastHit[] hits = RaycastAllSorted();
@@ -64,7 +71,8 @@ namespace RPG.Control
             }
             return false;
         }
-        private RaycastHit[] RaycastAllSorted()
+
+        RaycastHit[] RaycastAllSorted()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             float[] distances = new float[hits.Length];
@@ -75,6 +83,7 @@ namespace RPG.Control
             Array.Sort(distances, hits);
             return hits;
         }
+
         private bool InteractWithMovement()
         {
             Vector3 target;
@@ -90,6 +99,7 @@ namespace RPG.Control
             }
             return false;
         }
+
         private bool RaycastNavMesh(out Vector3 target)
         {
             target = new Vector3();
@@ -99,14 +109,18 @@ namespace RPG.Control
             if (!hasHit) return false;
 
             NavMeshHit navMeshHit;
-            bool hasCastToNavMesh = NavMesh.SamplePosition(hit.point, out navMeshHit, maxNavMeshProjectionDistance, NavMesh.AllAreas);
+            bool hasCastToNavMesh = NavMesh.SamplePosition(
+                hit.point, out navMeshHit, maxNavMeshProjectionDistance, NavMesh.AllAreas);
             if (!hasCastToNavMesh) return false;
+
             target = navMeshHit.position;
+
             NavMeshPath path = new NavMeshPath();
             bool hasPath = NavMesh.CalculatePath(transform.position, target, NavMesh.AllAreas, path);
             if (!hasPath) return false;
             if (path.status != NavMeshPathStatus.PathComplete) return false;
             if (GetPathLength(path) > maxNavPathLength) return false;
+
             return true;
         }
 
@@ -114,10 +128,11 @@ namespace RPG.Control
         {
             float total = 0;
             if (path.corners.Length < 2) return total;
-            for(int i=0; i<path.corners.Length-1;i++)
+            for (int i = 0; i < path.corners.Length - 1; i++)
             {
-                total += Vector3.Distance(path.corners[i], path.corners[i+1]);
+                total += Vector3.Distance(path.corners[i], path.corners[i + 1]);
             }
+
             return total;
         }
 

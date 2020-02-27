@@ -506,10 +506,6 @@ PrefabInstance:
       propertyPath: cursorMappings.Array.data[0].type
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 829486424, guid: f789f8e6662a32a43a19baf475bd704a, type: 3}
-      propertyPath: m_Height
-      value: 0.13
-      objectReference: {fileID: 0}
     - target: {fileID: 1841275998820063881, guid: f789f8e6662a32a43a19baf475bd704a,
         type: 3}
       propertyPath: m_LocalPosition.x

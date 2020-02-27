@@ -1,31 +1,32 @@
-﻿using RPG.Core;
+﻿using UnityEngine;
 using RPG.Resources;
-using System;
-using UnityEngine;
 
 namespace RPG.Combat
 {
-    [CreateAssetMenu(fileName = "weapon", menuName = "Weapons/Make New Weapom", order = 0)]
+    [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
     public class Weapon : ScriptableObject
     {
-
         [SerializeField] AnimatorOverrideController animatorOverride = null;
-        [SerializeField] GameObject weaponPrefab = null;
+        [SerializeField] GameObject equippedPrefab = null;
         [SerializeField] float weaponDamage = 5f;
-        [SerializeField] float weaponPercentageBonus = 0f;
+        [SerializeField] float percentageBonus = 0;
         [SerializeField] float weaponRange = 2f;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
-        const string weaponName = "weapon";
+
+        const string weaponName = "Weapon";
+
         public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
             DestroyOldWeapon(rightHand, leftHand);
-            if (weaponPrefab != null)
+
+            if (equippedPrefab != null)
             {
                 Transform handTransform = GetTransform(rightHand, leftHand);
-                GameObject weapon = Instantiate(weaponPrefab, handTransform);
+                GameObject weapon = Instantiate(equippedPrefab, handTransform);
                 weapon.name = weaponName;
             }
+
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
             if (animatorOverride != null)
             {
@@ -45,6 +46,7 @@ namespace RPG.Combat
                 oldWeapon = leftHand.Find(weaponName);
             }
             if (oldWeapon == null) return;
+
             oldWeapon.name = "DESTROYING";
             Destroy(oldWeapon.gameObject);
         }
@@ -61,22 +63,26 @@ namespace RPG.Combat
         {
             return projectile != null;
         }
+
         public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instigator, float calculatedDamage)
         {
             Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
-            projectileInstance.SetTarget(target, instigator, weaponDamage);
+            projectileInstance.SetTarget(target, instigator, calculatedDamage);
         }
-        public float GetWeaponDamage()
+
+        public float GetDamage()
         {
             return weaponDamage;
         }
-        public float GetWeaponRange()
-        {
-            return weaponRange;
-        }
+
         public float GetPercentageBonus()
         {
-            return weaponPercentageBonus;
+            return percentageBonus;
+        }
+
+        public float GetRange()
+        {
+            return weaponRange;
         }
     }
 }

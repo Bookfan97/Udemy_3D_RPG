@@ -14,14 +14,17 @@ namespace RPG.Resources
         LazyValue<float> healthPoints;
 
         bool isDead = false;
+
         private void Awake()
         {
             healthPoints = new LazyValue<float>(GetInitialHealth);
         }
+
         private float GetInitialHealth()
         {
             return GetComponent<BaseStats>().GetStat(Stat.Health);
         }
+
         private void Start()
         {
             healthPoints.ForceInit();
@@ -94,7 +97,7 @@ namespace RPG.Resources
 
         public object CaptureState()
         {
-            return healthPoints;
+            return healthPoints.value;
         }
 
         public void RestoreState(object state)
