@@ -44,19 +44,6 @@ MonoBehaviour:
     hotspot: {x: 0, y: 0}
   maxNavMeshProjectionDistance: 1
   raycastRadius: 1
---- !u!114 &1939030306811910802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4148981140436526159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a891d368729f234458b77eafb3dff8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  experiencePoints: 0
 --- !u!114 &1039117765587324071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySize: 16
---- !u!114 &8388042354982929516
+--- !u!114 &1939030306811910802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,9 +66,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4148981140436526159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b11801ca435999e4e96afb1bcc282d56, type: 3}
+  m_Script: {fileID: 11500000, guid: a891d368729f234458b77eafb3dff8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experiencePoints: 0
 --- !u!114 &3529005947282872959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +80,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a19ff972ec6859b48870488d7b1e81b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3046180678401382302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4148981140436526159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8924271004848245ba221be39c28f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2195639545109207485

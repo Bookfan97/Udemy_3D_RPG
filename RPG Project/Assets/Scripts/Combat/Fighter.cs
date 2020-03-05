@@ -11,13 +11,13 @@ using RPG.Inventories;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float timeBetweenAttacks = 1f;
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
-        Equipment equiment;
+        Equipment equipment;
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
         WeaponConfig currentWeaponConfig;
@@ -27,15 +27,16 @@ namespace RPG.Combat
         {
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
-            if(equiment)
+            equipment = GetComponent<Equipment>();
+            if(equipment)
             {
-                equiment.equipmentUpdated += UpdateWeapon;
+                equipment.equipmentUpdated += UpdateWeapon;
             }
         }
 
         private void UpdateWeapon()
         {
-            var weapon = equiment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+            var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
             if (weapon == null)
             {
                 EquipWeapon(defaultWeapon);
@@ -169,23 +170,7 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("attack");
             GetComponent<Animator>().SetTrigger("stopAttack");
         }
-
-        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-        {
-            if (stat == Stat.Damage)
-            {
-                yield return currentWeaponConfig.GetDamage();
-            }
-        }
-
-        public IEnumerable<float> GetPercentageModifiers(Stat stat)
-        {
-            if (stat == Stat.Damage)
-            {
-                yield return currentWeaponConfig.GetPercentageBonus();
-            }
-        }
-
+        
         public object CaptureState()
         {
             return currentWeaponConfig.name;
