@@ -7,6 +7,7 @@ using RPG.Stats;
 using System.Collections.Generic;
 using RPG.Utils;
 using System;
+using RPG.Inventories;
 
 namespace RPG.Combat
 {
@@ -16,7 +17,7 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] WeaponConfig defaultWeapon = null;
-
+        Equipment equiment;
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
         WeaponConfig currentWeaponConfig;
@@ -26,6 +27,23 @@ namespace RPG.Combat
         {
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
+            if(equiment)
+            {
+                equiment.equipmentUpdated += UpdateWeapon;
+            }
+        }
+
+        private void UpdateWeapon()
+        {
+            var weapon = equiment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+            if (weapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            }
+            else
+            {
+                EquipWeapon(weapon);
+            }
         }
 
         private Weapon SetupDefaultWeapon()
