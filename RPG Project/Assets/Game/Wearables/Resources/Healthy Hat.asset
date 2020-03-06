@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Healthy Hat
   m_EditorClassIdentifier: 
   itemID: 7fb59ec3-9475-443c-95c6-159b864a87ea
-  displayName: 
+  displayName: Healthy Hat
   description: 
   icon: {fileID: 21300000, guid: c1b61b3a91732a747a8496fc75a13fe2, type: 3}
   pickup: {fileID: 5539958190035176905, guid: ceef8c09be3d23a409b4d7b68ddddeb9, type: 3}
