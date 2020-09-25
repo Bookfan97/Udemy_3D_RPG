@@ -26,5 +26,12 @@ namespace RPG.Dialog.Editor
             }
             return false;
         }
+
+        private void OnGUI()
+        {
+            EditorGUILayout.LabelField("Hello World");
+            EditorGUILayout.LabelField("The quick brown fox");
+            EditorGUILayout.LabelField("jumps over the lazy dog");
+        }
     }
 }
