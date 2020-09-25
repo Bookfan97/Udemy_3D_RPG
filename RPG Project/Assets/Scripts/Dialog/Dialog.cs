@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Dialog", menuName = "Dialog", order = 0)]
-public class Dialog : ScriptableObject
+namespace RPG.Dialog
 {
-    [SerializeField] private DialogNode[] nodes;
+    [CreateAssetMenu(fileName = "New Dialog", menuName = "Dialog", order = 0)]
+    public class Dialog : ScriptableObject
+    {
+        [SerializeField] private DialogNode[] nodes;
+    }
 }
