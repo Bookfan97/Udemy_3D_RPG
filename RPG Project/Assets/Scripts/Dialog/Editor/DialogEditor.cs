@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 namespace RPG.Dialog.Editor
@@ -11,6 +12,19 @@ namespace RPG.Dialog.Editor
         public static void ShowEditorWindow()
         {
             GetWindow(typeof(DialogEditor), false, "Dialogue Editor");
+        }
+
+        [OnOpenAssetAttribute(1)]
+        public static bool OnOpenAsset(int instanceID, int line)
+        {
+            Dialog dialog = EditorUtility.InstanceIDToObject(instanceID) as Dialog;
+            if (dialog != null)
+            {
+                //Debug.Log("Opening " + dialog);
+                ShowEditorWindow();
+                return true;
+            }
+            return false;
         }
     }
 }
