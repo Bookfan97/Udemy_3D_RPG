@@ -53,7 +53,11 @@ namespace RPG.Dialog.Editor
             {
                 foreach (DialogNode node in selectedDialog.GetAllNodes())
                 {
-                    EditorGUILayout.LabelField(node.text);
+                    string newText = EditorGUILayout.TextField(node.text);
+                    if (newText != node.text)
+                    {
+                        EditorUtility.SetDirty(selectedDialog);
+                    }
                 }
             }
         }
