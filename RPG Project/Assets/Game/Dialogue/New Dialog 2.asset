@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: New Dialog 2
   m_EditorClassIdentifier: 
   nodes:
-  - uniqueID: 
-    text: 
-    children: []
-  - uniqueID: 
-    text: 
-    children: []
-  - uniqueID: 
-    text: 
-    children: []
+  - uniqueID: a
+    text: Hi
+    children:
+    - 1
+    - 1
+    position:
+      serializedVersion: 2
+      x: 30
+      y: 30
+      width: 400
+      height: 100

@@ -8,7 +8,8 @@ namespace RPG.Dialog
     [CreateAssetMenu(fileName = "New Dialog", menuName = "Dialog", order = 0)]
     public class Dialog : ScriptableObject
     {
-        [SerializeField] private List<DialogNode> nodes = new List<DialogNode>();
+        [SerializeField]
+        private List<DialogNode> nodes = new List<DialogNode>();
 
 #if UNITY_EDITOR
 
