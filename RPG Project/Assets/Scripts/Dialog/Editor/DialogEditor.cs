@@ -8,6 +8,8 @@ namespace RPG.Dialog.Editor
 {
     public class DialogEditor : EditorWindow
     {
+        private Dialog selectedDialog = null;
+
         [MenuItem("Window/Dialogue Editor")]
         public static void ShowEditorWindow()
         {
@@ -20,18 +22,37 @@ namespace RPG.Dialog.Editor
             Dialog dialog = EditorUtility.InstanceIDToObject(instanceID) as Dialog;
             if (dialog != null)
             {
-                //Debug.Log("Opening " + dialog);
                 ShowEditorWindow();
                 return true;
             }
             return false;
         }
 
+        private void OnEnable()
+        {
+            Selection.selectionChanged += OnSelectionChanged;
+        }
+
+        private void OnSelectionChanged()
+        {
+            Dialog newDialog = Selection.activeObject as Dialog;
+            if (newDialog != null)
+            {
+                selectedDialog = newDialog;
+                Repaint();
+            }
+        }
+
         private void OnGUI()
         {
-            EditorGUILayout.LabelField("Hello World");
-            EditorGUILayout.LabelField("The quick brown fox");
-            EditorGUILayout.LabelField("jumps over the lazy dog");
+            if (selectedDialog == null)
+            {
+                EditorGUILayout.LabelField("No dialogue selected");
+            }
+            else
+            {
+                EditorGUILayout.LabelField(selectedDialog.name);
+            }
         }
     }
 }
