@@ -18,9 +18,53 @@ MonoBehaviour:
     children:
     - 1
     - 1
-    position:
+    coord:
       serializedVersion: 2
-      x: 30
-      y: 30
-      width: 400
+      x: 669
+      y: 598
+      width: 200
+      height: 100
+  - uniqueID: a
+    text: Hi
+    children:
+    - 1
+    - 1
+    coord:
+      serializedVersion: 2
+      x: 388
+      y: 457
+      width: 200
+      height: 100
+  - uniqueID: a
+    text: Hi
+    children:
+    - 1
+    - 1
+    coord:
+      serializedVersion: 2
+      x: 628
+      y: 136
+      width: 200
+      height: 100
+  - uniqueID: a
+    text: Hi
+    children:
+    - 1
+    - 1
+    coord:
+      serializedVersion: 2
+      x: 377
+      y: 246
+      width: 200
+      height: 100
+  - uniqueID: a
+    text: Hi
+    children:
+    - 1
+    - 1
+    coord:
+      serializedVersion: 2
+      x: 1259
+      y: 414
+      width: 200
       height: 100
