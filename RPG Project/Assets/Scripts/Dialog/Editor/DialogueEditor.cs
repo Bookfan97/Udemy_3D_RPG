@@ -11,9 +11,18 @@ namespace RPG.Dialogue.Editor
     public class DialogEditor : EditorWindow
     {
         private Dialogue selectedDialogue = null;
+
+        [NonSerialized]
         private GUIStyle nodeStyle = null;
+
+        [NonSerialized]
         private DialogueNode draggingNode = null;
+
+        [NonSerialized]
         private Vector2 draggingOffset;
+
+        [NonSerialized]
+        private DialogueNode creatingNode = null;
 
         [MenuItem("Window/Dialogue Editor")]
         public static void ShowEditorWindow()
@@ -69,6 +78,12 @@ namespace RPG.Dialogue.Editor
                 foreach (DialogueNode node in selectedDialogue.GetAllNodes())
                 {
                     DrawConnections(node);
+                }
+                if (creatingNode != null)
+                {
+                    Undo.RecordObject(selectedDialogue, "Added Dialogue Node");
+                    selectedDialogue.CreateNode(creatingNode);
+                    creatingNode = null;
                 }
             }
         }
@@ -126,19 +141,18 @@ namespace RPG.Dialogue.Editor
         {
             GUILayout.BeginArea(node.coord, nodeStyle);
             EditorGUI.BeginChangeCheck();
-            EditorGUILayout.LabelField("Node:", EditorStyles.whiteLabel);
+            //EditorGUILayout.LabelField("Node:", EditorStyles.whiteLabel);
             string newText = EditorGUILayout.TextField(node.text);
-            string newUniqueID = EditorGUILayout.TextField(node.uniqueID);
+            //string newUniqueID = EditorGUILayout.TextField(node.uniqueID);
             if (EditorGUI.EndChangeCheck())
             {
                 Undo.RecordObject(selectedDialogue, "Update Dialogue Text");
                 node.text = newText;
-                node.uniqueID = newUniqueID;
             }
-            /*            foreach (DialogNode childNode in selectedDialogue.GetAllChildren(node))
-                        {
-                            EditorGUILayout.LabelField(childNode.text);
-                        }*/
+            if (GUILayout.Button("+"))
+            {
+                creatingNode = node;
+            }
             GUILayout.EndArea();
         }
     }
