@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace RPG.Dialog
+namespace RPG.Dialogue
 {
-    [CreateAssetMenu(fileName = "New Dialog", menuName = "Dialog", order = 0)]
-    public class Dialog : ScriptableObject
+    [CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue", order = 0)]
+    public class Dialogue : ScriptableObject
     {
         [SerializeField]
-        private List<DialogNode> nodes = new List<DialogNode>();
-        private Dictionary<string, DialogNode> nodeLookup = new Dictionary<string, DialogNode>();
+        private List<DialogueNode> nodes = new List<DialogueNode>();
+        private Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
 
 #if UNITY_EDITOR
 
@@ -20,7 +20,7 @@ namespace RPG.Dialog
             //Debug.Log("Hey you, you're finally awake");
             if (nodes.Count == 0)
             {
-                nodes.Add(new DialogNode());
+                nodes.Add(new DialogueNode());
             }
         }
 #endif
@@ -28,23 +28,23 @@ namespace RPG.Dialog
         private void OnValidate()
         {
             nodeLookup.Clear();
-            foreach (DialogNode node in GetAllNodes())
+            foreach (DialogueNode node in GetAllNodes())
             {
                 nodeLookup[node.uniqueID] = node;
             }
         }
 
-        public IEnumerable<DialogNode> GetAllNodes()
+        public IEnumerable<DialogueNode> GetAllNodes()
         {
             return nodes;
         }
 
-        public DialogNode GetRootNode()
+        public DialogueNode GetRootNode()
         {
             return nodes[0];
         }
 
-        public IEnumerable<DialogNode> GetAllChildren(DialogNode ParentNode)
+        public IEnumerable<DialogueNode> GetAllChildren(DialogueNode ParentNode)
         {
             foreach (string childID in ParentNode.children)
             {

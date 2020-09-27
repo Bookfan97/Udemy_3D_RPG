@@ -6,13 +6,13 @@ using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
-namespace RPG.Dialog.Editor
+namespace RPG.Dialogue.Editor
 {
     public class DialogEditor : EditorWindow
     {
-        private Dialog selectedDialog = null;
+        private Dialogue selectedDialogue = null;
         private GUIStyle nodeStyle = null;
-        private DialogNode draggingNode = null;
+        private DialogueNode draggingNode = null;
         private Vector2 draggingOffset;
 
         [MenuItem("Window/Dialogue Editor")]
@@ -24,8 +24,8 @@ namespace RPG.Dialog.Editor
         [OnOpenAssetAttribute(1)]
         public static bool OnOpenAsset(int instanceID, int line)
         {
-            Dialog dialog = EditorUtility.InstanceIDToObject(instanceID) as Dialog;
-            if (dialog != null)
+            Dialogue dialogue = EditorUtility.InstanceIDToObject(instanceID) as Dialogue;
+            if (dialogue != null)
             {
                 ShowEditorWindow();
                 return true;
@@ -45,27 +45,44 @@ namespace RPG.Dialog.Editor
 
         private void OnSelectionChanged()
         {
-            Dialog newDialog = Selection.activeObject as Dialog;
-            if (newDialog != null)
+            Dialogue newDialogue = Selection.activeObject as Dialogue;
+            if (newDialogue != null)
             {
-                selectedDialog = newDialog;
+                selectedDialogue = newDialogue;
                 Repaint();
             }
         }
 
         private void OnGUI()
         {
-            if (selectedDialog == null)
+            if (selectedDialogue == null)
             {
                 EditorGUILayout.LabelField("No dialogue selected");
             }
             else
             {
                 ProcessEvents();
-                foreach (DialogNode node in selectedDialog.GetAllNodes())
+                foreach (DialogueNode node in selectedDialogue.GetAllNodes())
                 {
-                    OnGUINode(node);
+                    DrawNode(node);
                 }
+                foreach (DialogueNode node in selectedDialogue.GetAllNodes())
+                {
+                    DrawConnections(node);
+                }
+            }
+        }
+
+        private void DrawConnections(DialogueNode node)
+        {
+            Vector3 startPosition = new Vector2(node.coord.xMax, node.coord.center.y);
+            foreach (DialogueNode childNode in selectedDialogue.GetAllChildren(node))
+            {
+                Vector3 endPosition = new Vector2(childNode.coord.xMin, childNode.coord.center.y);
+                Vector3 controlPointOffset = endPosition - startPosition; //new Vector2(100, 0);
+                controlPointOffset.y = 0;
+                controlPointOffset.x *= 0.8f;
+                Handles.DrawBezier(startPosition, endPosition, startPosition + controlPointOffset, endPosition - controlPointOffset, Color.white, null, 4f);
             }
         }
 
@@ -81,21 +98,21 @@ namespace RPG.Dialog.Editor
             }
             else if (Event.current.type == EventType.MouseDrag && draggingNode != null)
             {
-                Undo.RecordObject(selectedDialog, "Move Dialog Node");
+                Undo.RecordObject(selectedDialogue, "Move Dialogue Node");
                 draggingNode.coord.position = Event.current.mousePosition + draggingOffset;
                 GUI.changed = true;
             }
             else if (Event.current.type == EventType.MouseUp && draggingNode != null)
             {
                 draggingNode = null;
-                //selectedDialog.GetRootNode().coord.position = Event.current.mousePosition;
+                //selectedDialogue.GetRootNode().coord.position = Event.current.mousePosition;
             }
         }
 
-        private DialogNode GetNodeAtPoint(Vector2 point)
+        private DialogueNode GetNodeAtPoint(Vector2 point)
         {
-            DialogNode foundNode = null;
-            foreach (DialogNode node in selectedDialog.GetAllNodes())
+            DialogueNode foundNode = null;
+            foreach (DialogueNode node in selectedDialogue.GetAllNodes())
             {
                 if (node.coord.Contains(point))
                 {
@@ -105,7 +122,7 @@ namespace RPG.Dialog.Editor
             return foundNode;
         }
 
-        private void OnGUINode(DialogNode node)
+        private void DrawNode(DialogueNode node)
         {
             GUILayout.BeginArea(node.coord, nodeStyle);
             EditorGUI.BeginChangeCheck();
@@ -114,14 +131,14 @@ namespace RPG.Dialog.Editor
             string newUniqueID = EditorGUILayout.TextField(node.uniqueID);
             if (EditorGUI.EndChangeCheck())
             {
-                Undo.RecordObject(selectedDialog, "Update Dialogue Text");
+                Undo.RecordObject(selectedDialogue, "Update Dialogue Text");
                 node.text = newText;
                 node.uniqueID = newUniqueID;
             }
-            foreach (DialogNode childNode in selectedDialog.GetAllChildren(node))
-            {
-                EditorGUILayout.LabelField(childNode.text);
-            }
+            /*            foreach (DialogNode childNode in selectedDialogue.GetAllChildren(node))
+                        {
+                            EditorGUILayout.LabelField(childNode.text);
+                        }*/
             GUILayout.EndArea();
         }
     }

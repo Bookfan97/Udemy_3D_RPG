@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RPG.Dialog
+namespace RPG.Dialogue
 {
     [System.Serializable]
-    public class DialogNode
+    public class DialogueNode
     {
         public string uniqueID;
         public string text;
