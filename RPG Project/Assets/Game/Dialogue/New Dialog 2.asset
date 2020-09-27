@@ -74,7 +74,8 @@ MonoBehaviour:
       height: 100
   - uniqueID: b6b1fecb-9af1-4e73-8c88-ab07cc7c381e
     text: 
-    children: []
+    children:
+    - 3026c8f0-1429-489d-aa86-7a746f49fef6
     coord:
       serializedVersion: 2
       x: 957
@@ -86,8 +87,8 @@ MonoBehaviour:
     children: []
     coord:
       serializedVersion: 2
-      x: 1052
-      y: 146
+      x: 1053
+      y: 150
       width: 200
       height: 100
   - uniqueID: 3026c8f0-1429-489d-aa86-7a746f49fef6
@@ -95,13 +96,14 @@ MonoBehaviour:
     children: []
     coord:
       serializedVersion: 2
-      x: 1055
-      y: 360
+      x: 1339
+      y: 429
       width: 200
       height: 100
   - uniqueID: 869c1aee-f73c-413d-9f97-cea20e61e5de
     text: 
-    children: []
+    children:
+    - 3026c8f0-1429-489d-aa86-7a746f49fef6
     coord:
       serializedVersion: 2
       x: 963
