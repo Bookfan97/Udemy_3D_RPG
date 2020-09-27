@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace RPG.Dialog
     {
         [SerializeField]
         private List<DialogNode> nodes = new List<DialogNode>();
+        private Dictionary<string, DialogNode> nodeLookup = new Dictionary<string, DialogNode>();
 
 #if UNITY_EDITOR
 
@@ -23,6 +25,15 @@ namespace RPG.Dialog
         }
 #endif
 
+        private void OnValidate()
+        {
+            nodeLookup.Clear();
+            foreach (DialogNode node in GetAllNodes())
+            {
+                nodeLookup[node.uniqueID] = node;
+            }
+        }
+
         public IEnumerable<DialogNode> GetAllNodes()
         {
             return nodes;
@@ -31,6 +42,17 @@ namespace RPG.Dialog
         public DialogNode GetRootNode()
         {
             return nodes[0];
+        }
+
+        public IEnumerable<DialogNode> GetAllChildren(DialogNode ParentNode)
+        {
+            foreach (string childID in ParentNode.children)
+            {
+                if (nodeLookup.ContainsKey(childID))
+                {
+                    yield return nodeLookup[childID];
+                }
+            }
         }
     }
 }
