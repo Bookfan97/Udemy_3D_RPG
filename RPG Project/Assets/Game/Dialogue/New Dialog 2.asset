@@ -20,8 +20,8 @@ MonoBehaviour:
     - c
     coord:
       serializedVersion: 2
-      x: 942
-      y: -4
+      x: 94
+      y: 269
       width: 200
       height: 100
   - uniqueID: b
@@ -31,8 +31,8 @@ MonoBehaviour:
     - e
     coord:
       serializedVersion: 2
-      x: 727
-      y: 149
+      x: 356
+      y: 367
       width: 200
       height: 100
   - uniqueID: c
@@ -42,8 +42,8 @@ MonoBehaviour:
     - 1
     coord:
       serializedVersion: 2
-      x: 1176
-      y: 163
+      x: 351
+      y: 170
       width: 200
       height: 100
   - uniqueID: d
@@ -51,10 +51,12 @@ MonoBehaviour:
     children:
     - 1
     - 1
+    - b6b1fecb-9af1-4e73-8c88-ab07cc7c381e
+    - 869c1aee-f73c-413d-9f97-cea20e61e5de
     coord:
       serializedVersion: 2
-      x: 564
-      y: 334
+      x: 659
+      y: 530
       width: 200
       height: 100
   - uniqueID: e
@@ -62,9 +64,47 @@ MonoBehaviour:
     children:
     - 1
     - 1
+    - 28af4de6-fcff-473e-88d1-8230c9fd527d
+    - 3026c8f0-1429-489d-aa86-7a746f49fef6
     coord:
       serializedVersion: 2
-      x: 885
-      y: 328
+      x: 637
+      y: 254
+      width: 200
+      height: 100
+  - uniqueID: b6b1fecb-9af1-4e73-8c88-ab07cc7c381e
+    text: 
+    children: []
+    coord:
+      serializedVersion: 2
+      x: 957
+      y: 614
+      width: 200
+      height: 100
+  - uniqueID: 28af4de6-fcff-473e-88d1-8230c9fd527d
+    text: 
+    children: []
+    coord:
+      serializedVersion: 2
+      x: 1052
+      y: 146
+      width: 200
+      height: 100
+  - uniqueID: 3026c8f0-1429-489d-aa86-7a746f49fef6
+    text: 
+    children: []
+    coord:
+      serializedVersion: 2
+      x: 1055
+      y: 360
+      width: 200
+      height: 100
+  - uniqueID: 869c1aee-f73c-413d-9f97-cea20e61e5de
+    text: 
+    children: []
+    coord:
+      serializedVersion: 2
+      x: 963
+      y: 482
       width: 200
       height: 100
