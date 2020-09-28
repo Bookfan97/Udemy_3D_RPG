@@ -12,7 +12,12 @@ namespace RPG.Dialogue
     {
         [SerializeField]
         private List<DialogueNode> nodes = new List<DialogueNode>();
+
+        [NonSerialized]
         private Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
+
+        [NonSerialized]
+        private Vector2 newNodeOffset = new Vector2(250, 0);
 
         private void OnValidate()
         {
@@ -50,11 +55,13 @@ namespace RPG.Dialogue
         {
             DialogueNode newNode = CreateInstance<DialogueNode>();
             newNode.name = Guid.NewGuid().ToString();
-            Undo.RegisterCreatedObjectUndo(newNode, "Created Dialogue Node");
             if (parent != null)
             {
                 parent.AddChild(newNode.name);
+                newNode.SetPlayerIsSpeaking(!parent.IsPlayerSpeaking());
+                newNode.SetPosition(parent.GetRect().position + newNodeOffset);
             }
+            Undo.RegisterCreatedObjectUndo(newNode, "Created Dialogue Node");
             if (AssetDatabase.GetAssetPath(this) != "")
             {
                 Undo.RecordObject(this, "Added Dialogue Node");
