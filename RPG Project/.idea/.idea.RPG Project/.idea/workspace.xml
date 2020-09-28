@@ -19,7 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="840c173c-1b8e-4503-803b-974fa5f5726c" name="Default Changelist" comment="" />
+    <list default="true" id="840c173c-1b8e-4503-803b-974fa5f5726c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog 2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog 2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sandbox.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Sandbox.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/Editor/DialogueEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/Editor/DialogueEditor.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +88,7 @@
       <updated>1600993006721</updated>
       <workItem from="1600993015785" duration="460000" />
       <workItem from="1600994114572" duration="811000" />
+      <workItem from="1601253685122" duration="10000" />
     </task>
     <servers />
   </component>
