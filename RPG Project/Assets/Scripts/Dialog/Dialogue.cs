@@ -14,18 +14,6 @@ namespace RPG.Dialogue
         private List<DialogueNode> nodes = new List<DialogueNode>();
         private Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
 
-#if UNITY_EDITOR
-
-        private void Awake()
-        {
-            //Debug.Log("Hey you, you're finally awake");
-            /*            if (nodes.Count == 0)
-                        {
-                            CreateNode(null);
-                        }*/
-        }
-#endif
-
         private void OnValidate()
         {
             nodeLookup.Clear();
@@ -47,7 +35,7 @@ namespace RPG.Dialogue
 
         public IEnumerable<DialogueNode> GetAllChildren(DialogueNode ParentNode)
         {
-            foreach (string childID in ParentNode.children)
+            foreach (string childID in ParentNode.GetChildren())
             {
                 if (nodeLookup.ContainsKey(childID))
                 {
@@ -56,6 +44,8 @@ namespace RPG.Dialogue
             }
         }
 
+#if UNITY_EDITOR
+
         public void CreateNode(DialogueNode parent)
         {
             DialogueNode newNode = CreateInstance<DialogueNode>();
@@ -63,7 +53,11 @@ namespace RPG.Dialogue
             Undo.RegisterCreatedObjectUndo(newNode, "Created Dialogue Node");
             if (parent != null)
             {
-                parent.children.Add(newNode.name);
+                parent.AddChild(newNode.name);
+            }
+            if (AssetDatabase.GetAssetPath(this) != "")
+            {
+                Undo.RecordObject(this, "Added Dialogue Node");
             }
             nodes.Add(newNode);
 
@@ -72,6 +66,7 @@ namespace RPG.Dialogue
 
         public void DeleteNode(DialogueNode nodeToDelete)
         {
+            Undo.RecordObject(this, "Deleted Dialogue Node");
             nodes.Remove(nodeToDelete);
             OnValidate();
             CleanDanglingChildren(nodeToDelete);
@@ -82,12 +77,14 @@ namespace RPG.Dialogue
         {
             foreach (DialogueNode node in GetAllNodes())
             {
-                node.children.Remove(nodeToDelete.name);
+                node.RemoveChild(nodeToDelete.name);
             }
         }
+#endif
 
         public void OnBeforeSerialize()
         {
+#if UNITY_EDITOR
             if (nodes.Count == 0)
             {
                 CreateNode(null);
@@ -102,6 +99,7 @@ namespace RPG.Dialogue
                     }
                 }
             }
+#endif
         }
 
         public void OnAfterDeserialize()
