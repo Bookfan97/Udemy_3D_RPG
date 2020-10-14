@@ -102,6 +102,7 @@
             <e p="DialogueNode.cs" t="Include" />
             <e p="Editor" t="Include">
               <e p="DialogueEditor.cs" t="Include" />
+              <e p="DialogueModificationProcessor.cs" t="Include" />
             </e>
             <e p="PlayerConversant.cs" t="Include" />
           </e>
