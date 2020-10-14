@@ -103,6 +103,7 @@
             <e p="Editor" t="Include">
               <e p="DialogueEditor.cs" t="Include" />
             </e>
+            <e p="PlayerConversant.cs" t="Include" />
           </e>
           <e p="Inventories" t="Include">
             <e p="DropLibrary.cs" t="Include" />
@@ -139,6 +140,7 @@
               <e p="DamageText.cs" t="Include" />
               <e p="DamageTextSpawner.cs" t="Include" />
             </e>
+            <e p="DialogueUI.cs" t="Include" />
             <e p="Inventories" t="Include">
               <e p="ActionSlotUI.cs" t="Include" />
               <e p="EquipmentSlotUI.cs" t="Include" />
