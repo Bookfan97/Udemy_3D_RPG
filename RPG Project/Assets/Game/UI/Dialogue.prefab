@@ -792,6 +792,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AIText: {fileID: 6657168661271145902}
   nextButton: {fileID: 4478868023463811438}
+  choiceRoot: {fileID: 3039699774941104108}
+  choicePrefab: {fileID: 20043832572361812, guid: 8ea06e763bfb8fa4e810c728e313194a,
+    type: 3}
 --- !u!1 &8111592228167945200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1087,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Choice Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 540955427266642276, guid: 8ea06e763bfb8fa4e810c728e313194a,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 540955427266642276, guid: 8ea06e763bfb8fa4e810c728e313194a,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 540955427266642276, guid: 8ea06e763bfb8fa4e810c728e313194a,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 540955427266642276, guid: 8ea06e763bfb8fa4e810c728e313194a,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2912560189251895156, guid: 8ea06e763bfb8fa4e810c728e313194a,
         type: 3}

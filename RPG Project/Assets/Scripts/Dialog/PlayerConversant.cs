@@ -10,6 +10,7 @@ namespace RPG.Dialogue
     public class PlayerConversant : MonoBehaviour
     {
         [SerializeField] private Dialogue currentDialogue;
+        
         private DialogueNode currentNode = null;
 
         private void Awake()
@@ -26,6 +27,11 @@ namespace RPG.Dialogue
             return currentNode.GetText();
         }
 
+        public IEnumerable<String> GetChoices()
+        {
+            yield return "1";
+        }
+        
         public void Next()
         {
             DialogueNode[] children=currentDialogue.GetAllChildren(currentNode).ToArray();
