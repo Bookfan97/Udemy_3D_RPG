@@ -20,16 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="840c173c-1b8e-4503-803b-974fa5f5726c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog 2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog 2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialog.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sandbox.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Sandbox.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/Editor/DialogueEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/Editor/DialogueEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/MainMenu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Panel.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Settings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset Packs/GameDev.tv Assets/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Asset Packs/Universal Gold Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreTools/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Jupiter.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Characters/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Core/Core.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Core/Core.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Inventory Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Inventory Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sandbox/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManagement.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures and Sprites/Decoration.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures and Sprites/Lit UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures and Sprites/Rounded UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures and Sprites/SF UI/Background.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +72,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -89,6 +105,7 @@
       <workItem from="1600993015785" duration="460000" />
       <workItem from="1600994114572" duration="811000" />
       <workItem from="1601253685122" duration="10000" />
+      <workItem from="1602635211588" duration="599000" />
     </task>
     <servers />
   </component>
