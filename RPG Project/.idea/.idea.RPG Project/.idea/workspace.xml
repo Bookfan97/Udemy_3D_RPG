@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="840c173c-1b8e-4503-803b-974fa5f5726c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Dialogue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Dialogue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/DialogueUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/DialogueUI.cs" afterDir="false" />
     </list>
@@ -44,8 +44,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialog.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/Editor/DialogueModificationProcessor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/DialogueUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" />
       </list>
     </option>
   </component>
@@ -99,7 +100,7 @@
       <workItem from="1600994114572" duration="811000" />
       <workItem from="1601253685122" duration="10000" />
       <workItem from="1602635211588" duration="6081000" />
-      <workItem from="1602718651535" duration="1056000" />
+      <workItem from="1602718651535" duration="2159000" />
     </task>
     <servers />
   </component>
@@ -122,5 +123,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="936" y="330" key="run.anything.popup" timestamp="1602720388751">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="330" key="run.anything.popup/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1602720388751" />
   </component>
 </project>

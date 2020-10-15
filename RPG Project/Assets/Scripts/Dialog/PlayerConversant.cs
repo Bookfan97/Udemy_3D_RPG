@@ -10,7 +10,7 @@ namespace RPG.Dialogue
     public class PlayerConversant : MonoBehaviour
     {
         [SerializeField] private Dialogue currentDialogue;
-        
+        private bool choosing = false;
         private DialogueNode currentNode = null;
 
         private void Awake()
@@ -27,14 +27,25 @@ namespace RPG.Dialogue
             return currentNode.GetText();
         }
 
-        public IEnumerable<String> GetChoices()
+        public IEnumerable<DialogueNode> GetChoices()
         {
-            yield return "1";
+            return currentDialogue.GetPlayerChildren(currentNode);
+        }
+
+        public bool isChoosing()
+        {
+            return choosing;
         }
         
         public void Next()
         {
-            DialogueNode[] children=currentDialogue.GetAllChildren(currentNode).ToArray();
+            int numPlayerResponses = currentDialogue.GetPlayerChildren(currentNode).Count();
+            if (numPlayerResponses > 0)
+            {
+                choosing = true;
+                return;
+            }
+            DialogueNode[] children=currentDialogue.GetAIChildren(currentNode).ToArray();
             int randomIndex = Random.Range(0, children.Count());
             currentNode = children[randomIndex];
         }

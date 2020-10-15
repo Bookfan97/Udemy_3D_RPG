@@ -14,6 +14,7 @@ namespace RPG.UI
         [SerializeField] private Button nextButton;
         [SerializeField] private Transform choiceRoot;
         [SerializeField] private GameObject choicePrefab;
+        [SerializeField] private GameObject AIResponse;
         // Start is called before the first frame update
         void Start()
         {
@@ -24,14 +25,22 @@ namespace RPG.UI
 
         private void UpdateUI()
         {
-            AIText.text = playerConversant.GetText();
-            nextButton.gameObject.SetActive(playerConversant.hasNext());
-            choiceRoot.DetachChildren();
-            foreach (string choiceText in playerConversant.GetChoices())
+            AIResponse.SetActive(!playerConversant.isChoosing());
+            choiceRoot.gameObject.SetActive(playerConversant.isChoosing());
+            if (playerConversant.isChoosing())
             {
-                GameObject choiceInstance = Instantiate(choicePrefab, choiceRoot);
-                var textComp = choiceInstance.GetComponentInChildren<TextMeshProUGUI>();
-                textComp.text = choiceText;
+                choiceRoot.DetachChildren();
+                foreach (DialogueNode choice in playerConversant.GetChoices())
+                {
+                    GameObject choiceInstance = Instantiate(choicePrefab, choiceRoot);
+                    var textComp = choiceInstance.GetComponentInChildren<TextMeshProUGUI>();
+                    textComp.text = choice.GetText();
+                }
+            }
+            else
+            {
+                AIText.text = playerConversant.GetText();
+                nextButton.gameObject.SetActive(playerConversant.hasNext());
             }
         }
 
