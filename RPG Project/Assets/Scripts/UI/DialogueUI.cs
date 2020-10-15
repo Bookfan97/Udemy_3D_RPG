@@ -15,26 +15,36 @@ namespace RPG.UI
         [SerializeField] private Transform choiceRoot;
         [SerializeField] private GameObject choicePrefab;
         [SerializeField] private GameObject AIResponse;
+        [SerializeField] Button quitButton;
+
         // Start is called before the first frame update
         void Start()
         {
             playerConversant = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerConversant>();
-            nextButton.onClick.AddListener(Next);
+            playerConversant.onConversationUpdated += UpdateUI;
+            nextButton.onClick.AddListener(() => playerConversant.Next());
+            quitButton.onClick.AddListener(() => playerConversant.Quit());
+
             UpdateUI();
         }
 
-        private void UpdateUI()
+        void UpdateUI()
         {
-            AIResponse.SetActive(!playerConversant.isChoosing());
-            choiceRoot.gameObject.SetActive(playerConversant.isChoosing());
-            if (playerConversant.isChoosing())
+            gameObject.SetActive(playerConversant.IsActive());
+            if (!playerConversant.IsActive())
+            {
+                return;
+            }
+            AIResponse.SetActive(!playerConversant.IsChoosing());
+            choiceRoot.gameObject.SetActive(playerConversant.IsChoosing());
+            if (playerConversant.IsChoosing())
             {
                 BuildChoiceList();
             }
             else
             {
                 AIText.text = playerConversant.GetText();
-                nextButton.gameObject.SetActive(playerConversant.hasNext());
+                nextButton.gameObject.SetActive(playerConversant.HasNext());
             }
         }
 
@@ -47,18 +57,11 @@ namespace RPG.UI
                 var textComp = choiceInstance.GetComponentInChildren<TextMeshProUGUI>();
                 textComp.text = choice.GetText();
                 Button button = choiceInstance.GetComponentInChildren<Button>();
-                button.onClick.AddListener(() =>
+                button.onClick.AddListener(() => 
                 {
                     playerConversant.SelectChoice(choice);
-                    UpdateUI();
                 });
             }
-        }
-
-        void Next()
-        {
-            playerConversant.Next();
-            UpdateUI();
         }
     }
 }

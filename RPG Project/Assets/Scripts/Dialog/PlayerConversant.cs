@@ -7,15 +7,44 @@ using Random = UnityEngine.Random;
 
 namespace RPG.Dialogue
 {
-    public class PlayerConversant : MonoBehaviour
+ public class PlayerConversant : MonoBehaviour
     {
-        [SerializeField] private Dialogue currentDialogue;
-        private bool choosing = false;
-        private DialogueNode currentNode = null;
+        [SerializeField] Dialogue testDialogue;
+        Dialogue currentDialogue;
+        DialogueNode currentNode = null;
+        bool isChoosing = false;
 
-        private void Awake()
+        public event Action onConversationUpdated;
+
+        IEnumerator Start()
         {
+            yield return new WaitForSeconds(2);
+            StartDialogue(testDialogue);
+        }
+
+        public void StartDialogue(Dialogue newDialogue)
+        {
+            currentDialogue = newDialogue;
             currentNode = currentDialogue.GetRootNode();
+            onConversationUpdated();
+        }
+
+        public void Quit()
+        {
+            currentDialogue = null;
+            currentNode = null;
+            isChoosing = false;
+            onConversationUpdated();
+        }
+
+        public bool IsActive()
+        {
+            return currentDialogue != null;
+        }
+
+        public bool IsChoosing()
+        {
+            return isChoosing;
         }
 
         public string GetText()
@@ -24,6 +53,7 @@ namespace RPG.Dialogue
             {
                 return "";
             }
+
             return currentNode.GetText();
         }
 
@@ -35,29 +65,27 @@ namespace RPG.Dialogue
         public void SelectChoice(DialogueNode chosenNode)
         {
             currentNode = chosenNode;
-            choosing = false;
+            isChoosing = false;
             Next();
         }
-
-        public bool isChoosing()
-        {
-            return choosing;
-        }
-        
+    
         public void Next()
         {
             int numPlayerResponses = currentDialogue.GetPlayerChildren(currentNode).Count();
             if (numPlayerResponses > 0)
             {
-                choosing = true;
+                isChoosing = true;
+                onConversationUpdated();
                 return;
             }
-            DialogueNode[] children=currentDialogue.GetAIChildren(currentNode).ToArray();
-            int randomIndex = Random.Range(0, children.Count());
+
+            DialogueNode[] children = currentDialogue.GetAIChildren(currentNode).ToArray();
+            int randomIndex = UnityEngine.Random.Range(0, children.Count());
             currentNode = children[randomIndex];
+            onConversationUpdated();
         }
 
-        public bool hasNext()
+        public bool HasNext()
         {
             return currentDialogue.GetAllChildren(currentNode).Count() > 0;
         }
