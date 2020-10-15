@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="840c173c-1b8e-4503-803b-974fa5f5726c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/UI/Dialogue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/UI/Dialogue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/DialogueUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/DialogueUI.cs" afterDir="false" />
     </list>
@@ -44,8 +42,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialog.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogNode.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/Editor/DialogueModificationProcessor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/DialogueUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/DialogueUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" />
       </list>
     </option>
@@ -100,7 +98,7 @@
       <workItem from="1600994114572" duration="811000" />
       <workItem from="1601253685122" duration="10000" />
       <workItem from="1602635211588" duration="6081000" />
-      <workItem from="1602718651535" duration="2159000" />
+      <workItem from="1602718651535" duration="2712000" />
     </task>
     <servers />
   </component>

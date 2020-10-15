@@ -32,6 +32,13 @@ namespace RPG.Dialogue
             return currentDialogue.GetPlayerChildren(currentNode);
         }
 
+        public void SelectChoice(DialogueNode chosenNode)
+        {
+            currentNode = chosenNode;
+            choosing = false;
+            Next();
+        }
+
         public bool isChoosing()
         {
             return choosing;
