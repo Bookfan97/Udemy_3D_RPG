@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace RPG.Inventories
@@ -102,7 +103,60 @@ namespace RPG.Inventories
         {
             return description;
         }
+        
+        public void SetDisplayName(string newDisplayName)
+        {
+            if (newDisplayName == displayName) return;
+            SetUndo("Change Display Name");
+            displayName = newDisplayName;
+            Dirty();
+        }
 
+        public void SetDescription(string newDescription)
+        {
+            if (newDescription == description) return;
+            SetUndo("Change Description");
+            description = newDescription;
+            Dirty();
+        }
+
+        public void SetIcon(Sprite newIcon)
+        {
+            if (icon == newIcon) return;
+            SetUndo("Change Icon");
+            icon = newIcon;
+            Dirty();
+        }
+
+        public void SetPickup(Pickup newPickup)
+        {
+            if (pickup == newPickup) return;
+            SetUndo("Change Pickup");
+            pickup = newPickup;
+            Dirty();
+        }
+
+        public void SetItemID(string newItemID)
+        {
+            if (itemID == newItemID) return;
+            SetUndo("Change ItemID");
+            itemID = newItemID;
+            Dirty();
+        }
+
+        public void SetStackable(bool newStackable)
+        {
+            if (stackable == newStackable) return;
+            SetUndo(stackable?"Set Not Stackable": "Set Stackable");
+            stackable = newStackable;
+            Dirty();
+        }
+        
+        public Pickup GetPickup()
+        {
+            return pickup;
+        }
+        
         // PRIVATE
         
         void ISerializationCallbackReceiver.OnBeforeSerialize()
@@ -118,6 +172,16 @@ namespace RPG.Inventories
         {
             // Require by the ISerializationCallbackReceiver but we don't need
             // to do anything with it.
+        }
+
+        public void SetUndo(string message)
+        {
+            Undo.RecordObject(this, message);
+        }
+
+        public void Dirty()
+        {
+            EditorUtility.SetDirty(this);
         }
     }
 }
