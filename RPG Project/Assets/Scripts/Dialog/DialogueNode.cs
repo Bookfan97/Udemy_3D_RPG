@@ -20,6 +20,12 @@ namespace RPG.Dialogue
         [SerializeField]
         public Rect coord = new Rect(0, 0, 200, 100);
 
+        [SerializeField] 
+        private string onEnterAction;
+        
+        [SerializeField] 
+        private string onExitAction;
+
         public Rect GetRect()
         {
             return coord;
@@ -38,6 +44,16 @@ namespace RPG.Dialogue
         public bool IsPlayerSpeaking()
         {
             return isPlayerSpeaking;
+        }
+
+        public string GetOnEnterAction()
+        {
+            return onEnterAction;
+        }
+
+        public string GetOnExitAction()
+        {
+            return onExitAction;
         }
 
 #if UNITY_EDITOR
