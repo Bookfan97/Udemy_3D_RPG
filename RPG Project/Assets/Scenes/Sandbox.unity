@@ -590,7 +590,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118189172}
-  m_LocalRotation: {x: 0.3891363, y: -0.1772071, z: 0.07655778, w: 0.9007272}
+  m_LocalRotation: {x: 0.38913628, y: -0.17720713, z: 0.076557785, w: 0.9007272}
   m_LocalPosition: {x: -11.071442, y: -13.44665, z: -64.534996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3434,6 +3434,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 139fed5308e23dd499db55ca6a789198, type: 2}
+--- !u!114 &1870775991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8700660883109118860, guid: 45a7c203002fa4b40ab28a187115307a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1798078935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870775980}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d34af5b4fd21fb48924c0f36f4c3d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1870775996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870775980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e667aa1d53dec9843abe3907fa228c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: Attack
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1870775991}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &1894033937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3579,7 +3619,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933476792}
-  m_LocalRotation: {x: -0.008222253, y: 0.899545, z: -0.43642175, w: -0.016947564}
+  m_LocalRotation: {x: -0.008222254, y: 0.899545, z: -0.43642175, w: -0.016947564}
   m_LocalPosition: {x: -38.48144, y: -13.57665, z: -86.534996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5030,7 +5070,7 @@ PrefabInstance:
     - target: {fileID: 5923215541527260096, guid: 2f08f2a7a83c13149af58f3d6656f6ce,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -570.5086
+      value: -570.74994
       objectReference: {fileID: 0}
     - target: {fileID: 5923215541527260096, guid: 2f08f2a7a83c13149af58f3d6656f6ce,
         type: 3}

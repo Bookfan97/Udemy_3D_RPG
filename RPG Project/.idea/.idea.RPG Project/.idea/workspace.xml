@@ -20,18 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="840c173c-1b8e-4503-803b-974fa5f5726c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreTools.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialogue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Dialogue/New Dialogue.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sandbox.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Sandbox.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/AIConversant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/AIConversant.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures and Sprites/SF UI.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +39,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialog/Editor/DialogueModificationProcessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueTrigger.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -54,8 +50,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/Dialogue.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/DialogueUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Control/CursorType.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/AIConversant.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/AIConversant.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/DialogueTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs" />
       </list>
     </option>
@@ -90,10 +87,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="32016">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="32016" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -114,6 +111,7 @@
       <workItem from="1602635211588" duration="6081000" />
       <workItem from="1602718651535" duration="8234000" />
       <workItem from="1603230258439" duration="6630000" />
+      <workItem from="1603250449317" duration="1113000" />
     </task>
     <servers />
   </component>
@@ -226,37 +224,5 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="936" y="330" key="run.anything.popup/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1602720388751" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs</url>
-          <line>102</line>
-          <properties documentPath="E:\Github\Udemy_3D_RPG\RPG Project\Assets\Scripts\Dialog\PlayerConversant.cs" initialLine="102">
-            <startOffsets>
-              <option value="2720" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2781" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Dialog/PlayerConversant.cs</url>
-          <line>110</line>
-          <properties documentPath="E:\Github\Udemy_3D_RPG\RPG Project\Assets\Scripts\Dialog\PlayerConversant.cs" initialLine="110">
-            <startOffsets>
-              <option value="2964" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3022" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

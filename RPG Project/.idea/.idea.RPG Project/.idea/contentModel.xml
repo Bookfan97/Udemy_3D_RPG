@@ -101,6 +101,7 @@
             <e p="AIConversant.cs" t="Include" />
             <e p="Dialogue.cs" t="Include" />
             <e p="DialogueNode.cs" t="Include" />
+            <e p="DialogueTrigger.cs" t="Include" />
             <e p="Editor" t="Include">
               <e p="DialogueEditor.cs" t="Include" />
               <e p="DialogueModificationProcessor.cs" t="Include" />

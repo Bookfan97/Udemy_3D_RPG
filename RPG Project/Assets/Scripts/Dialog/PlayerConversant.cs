@@ -12,6 +12,7 @@ namespace RPG.Dialogue
         /*[SerializeField] Dialogue testDialogue;*/
         Dialogue currentDialogue;
         DialogueNode currentNode = null;
+        private AIConversant currentConversant = null;
         bool isChoosing = false;
 
         public event Action onConversationUpdated;
@@ -22,8 +23,9 @@ namespace RPG.Dialogue
             StartDialogue(testDialogue);
         }*/
 
-        public void StartDialogue(Dialogue newDialogue)
+        public void StartDialogue(AIConversant newConversant, Dialogue newDialogue)
         {
+            currentConversant = newConversant;
             currentDialogue = newDialogue;
             currentNode = currentDialogue.GetRootNode();
             TriggerEnterAction();
@@ -36,6 +38,7 @@ namespace RPG.Dialogue
             TriggerExitAction();
             currentNode = null;
             isChoosing = false;
+            currentConversant = null;
             onConversationUpdated();
         }
 
@@ -98,17 +101,26 @@ namespace RPG.Dialogue
 
         private void TriggerEnterAction()
         {
-            if (currentNode != null && currentNode.GetOnEnterAction() != "")
+            if (currentNode != null)
             {
-                Debug.Log("Enter Action: " + currentNode.GetOnEnterAction());
+                TriggerAction(currentNode.GetOnEnterAction());
             }
         }
 
         private void TriggerExitAction()
         {
-            if (currentNode != null && currentNode.GetOnExitAction() != "")
+            if (currentNode != null)
             {
-                Debug.Log("Exit Action: " +currentNode.GetOnExitAction());
+                TriggerAction(currentNode.GetOnExitAction());
+            }
+        }
+
+        private void TriggerAction(string action)
+        {
+            if (action == "") return;
+            foreach (DialogueTrigger trigger in currentConversant.GetComponents<DialogueTrigger>())
+            {
+                trigger.Trigger(action);
             }
         }
     }
