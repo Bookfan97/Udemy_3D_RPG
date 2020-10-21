@@ -98,6 +98,7 @@
             <e p="PersistentObjectSpawner.cs" t="Include" />
           </e>
           <e p="Dialog" t="Include">
+            <e p="AIConversant.cs" t="Include" />
             <e p="Dialogue.cs" t="Include" />
             <e p="DialogueNode.cs" t="Include" />
             <e p="Editor" t="Include">
